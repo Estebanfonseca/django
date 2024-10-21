@@ -44,9 +44,9 @@ INSTALLED_APPS = [
     'corsheaders',
 ]
 
-PYTUBE_API_KEY = 'AIzaSyDtVrT1q6eu6t9PhWLcGSb6YwxptD4rdF0'
-CLIENT_ID = '510825766562-2vpu5l9t9dlnu45bso5f32ohvellkm23.apps.googleusercontent.com'
-CLIENT_SECRET = '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'
+PYTUBE_API_KEY = os.environ.get('PYTUBE_API_KEY')
+CLIENT_ID = os.environ.get('CLIENT_ID')
+CLIENT_SECRET = os.environ.get('CLIENT_SECRET')
 REDIRECT_URI = 'http://localhost:8000/oauth2callback'
 
 MIDDLEWARE = [

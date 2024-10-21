@@ -12,12 +12,12 @@ import string
 
 client_secret = {
     "web": {
-        "client_id": "510825766562-2vpu5l9t9dlnu45bso5f32ohvellkm23.apps.googleusercontent.com",
+        "client_id": settings.CLIENT_ID,
         "project_id": "download-youtube-439301",
         "auth_uri": "https://accounts.google.com/o/oauth2/auth",
         "token_uri": "https://oauth2.googleapis.com/token",
         "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-        "client_secret": "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",
+        "client_secret": settings.SECRET_CLIENT,
         "redirect_uris": ["http://localhost:8000", "https://youtube-downloader-ym2g.onrender.com"],
         "javascript_origins": ["http://localhost:8000"]
     }
