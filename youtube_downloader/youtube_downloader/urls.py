@@ -20,5 +20,5 @@ from downloader import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('download/', views.download_mp3, name='download_mp3'),
+    path('', views.download_mp3, name='download_mp3'),
 ]
