@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Descargar MP3 de YouTube</title>
+</head>
+<body>
+    <h1>Descargar MP3 de YouTube</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="url" name="youtube_url" placeholder="Ingrese la URL de YouTube">
+        <input type="nombre_archivo" name="nombre" placeholder="Dale un nombre al archivo (opcional)">
+        <button type="submit">Descargar MP3</button>
+    </form>
+</body>
+</html>
