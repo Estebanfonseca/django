@@ -45,6 +45,9 @@ INSTALLED_APPS = [
 ]
 
 PYTUBE_API_KEY = 'AIzaSyDtVrT1q6eu6t9PhWLcGSb6YwxptD4rdF0'
+CLIENT_ID = '510825766562-2vpu5l9t9dlnu45bso5f32ohvellkm23.apps.googleusercontent.com'
+CLIENT_SECRET = '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'
+REDIRECT_URI = 'http://localhost:8000/oauth2callback'
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -86,7 +89,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'youtube_downloader.wsgi.application'
 
-
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 

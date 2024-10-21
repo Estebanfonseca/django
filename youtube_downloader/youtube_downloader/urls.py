@@ -18,7 +18,10 @@ from django.contrib import admin
 from django.urls import path
 from downloader import views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.download_mp3, name='download_mp3'),
+    path('', views.home, name='home'),  # La vista principal que verifica la autenticación
+    path('oauth2callback/', views.oauth2_login_or_callback, name='oauth2callback'),
+    path('download/', views.download_mp3, name='download_mp3'),
 ]
