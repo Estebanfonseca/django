@@ -37,6 +37,7 @@ def home(request):
 def oauth2_login_or_callback(request):
     # Verifica si el usuario ya tiene credenciales guardadas en la sesión
     if 'credentials' in request.session:
+        print("Credenciales existentes:", request.session['credentials'])
         return redirect('home')  # Redirige a la página de inicio si ya está autenticado
 
     client_secrets_file = os.path.join(os.path.dirname(__file__), '/etc/secrets/client_secret.json')
@@ -57,13 +58,14 @@ def oauth2_login_or_callback(request):
         credentials = flow.credentials
         request.session['credentials'] = credentials_to_dict(credentials)
 
+        print("Credenciales almacenadas en la sesión:", request.session['credentials'])
         return redirect('home')
 
+    # Si no hay 'code' en la URL, continúa con el flujo de autorización
     state = ''.join(random.choices(string.ascii_letters + string.digits, k=32))
     request.session['state'] = state
 
     authorization_url, _ = flow.authorization_url(state=state)
-    
     return redirect(authorization_url)
 
 def credentials_to_dict(credentials):
