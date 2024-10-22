@@ -23,7 +23,7 @@ COPY . .
 WORKDIR /app/youtube_downloader
 
 # Recopila los archivos estáticos de Django
-# RUN python manage.py collectstatic --noinput
+RUN python manage.py migrate
 
 # Expone el puerto que Django usará (por defecto 8000)
 EXPOSE 8000
