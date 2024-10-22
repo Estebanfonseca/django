@@ -44,7 +44,7 @@ def oauth2_login_or_callback(request):
     flow = Flow.from_client_secrets_file(
         client_secrets_file,
         scopes=['https://www.googleapis.com/auth/youtube.readonly'],
-        redirect_uri=settings.REDIRECT_URI  # Asegúrate de que esto sea HTTPS
+        redirect_uri=os.environ.get('REDIRECT_URI')  # Asegúrate de que esto sea HTTPS
     )
 
     if 'code' in request.GET:
