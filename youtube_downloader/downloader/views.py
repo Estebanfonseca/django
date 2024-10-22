@@ -39,7 +39,7 @@ def oauth2_login_or_callback(request):
     if 'credentials' in request.session:
         return redirect('home')  # Redirige a la página de inicio si ya está autenticado
 
-    client_secrets_file = os.path.join(os.path.dirname(__file__), './client_secret.json')
+    client_secrets_file = os.path.join(os.path.dirname(__file__), '/etc/secrets/client_secret.json')
     
     flow = Flow.from_client_secrets_file(
         client_secrets_file,
